@@ -1041,6 +1041,7 @@ GameObject:
   - component: {fileID: 3482629557695823659}
   - component: {fileID: 5903004848202272675}
   - component: {fileID: 6524197242262827982}
+  - component: {fileID: 6825209790515422627}
   m_Layer: 0
   m_Name: WhiteCow
   m_TagString: Untagged
@@ -1098,6 +1099,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &6825209790515422627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612513258284946849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 682e9c13a1a13534ab017e71955a2a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4712185898841388413
 GameObject:
   m_ObjectHideFlags: 0

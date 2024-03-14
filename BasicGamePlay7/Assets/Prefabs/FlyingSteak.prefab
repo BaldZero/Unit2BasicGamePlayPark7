@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5747113512183986623}
   - component: {fileID: 8683041083839344454}
   - component: {fileID: 3285200066627644162}
+  - component: {fileID: 8904868489096084392}
   m_Layer: 0
   m_Name: FlyingSteak
   m_TagString: Untagged
@@ -97,3 +98,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+--- !u!114 &8904868489096084392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532343540109892761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 682e9c13a1a13534ab017e71955a2a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
