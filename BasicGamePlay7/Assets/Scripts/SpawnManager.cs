@@ -5,11 +5,11 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] animalPrefabs;
-    public GameObject[] vertanimalprefabs;
+
     private float spawnRangeX = 15;
     private float spawnPosZ = 20;
     private float spawnRangeZ = 15f;
-    private float spawnRangeZ2 = 3f;
+    private float spawnRangeZ2 = 0f;
     private float spawnPosX = 15;
 
     private float startDelay = 2;
@@ -35,14 +35,14 @@ public class SpawnManager : MonoBehaviour
 
         int aniIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
-
-        int vertaniIndex = Random.Range(0,vertanimalprefabs.Length);
         Vector3 spawnPosHorizontal = new Vector3(spawnPosX, 0, Random.Range(spawnRangeZ2, spawnRangeZ));
-
-        Instantiate(animalPrefabs[aniIndex], spawnPos,
-        animalPrefabs[aniIndex].transform.rotation);
-
-        Instantiate(animalPrefabs[vertaniIndex], spawnPosHorizontal);
+   
+        Vector3 spawnPosHorizontal2 = new Vector3(-spawnPosX, 0, Random.Range(spawnRangeZ2, spawnRangeZ));
         
+
+        Instantiate(animalPrefabs[aniIndex], spawnPos, animalPrefabs[aniIndex].transform.rotation);
+        Instantiate(animalPrefabs[aniIndex], spawnPosHorizontal, Quaternion.Euler(0, 270, 0));
+        Instantiate(animalPrefabs[aniIndex], spawnPosHorizontal2, Quaternion.Euler(0, 90, 0));
+
     }
 }

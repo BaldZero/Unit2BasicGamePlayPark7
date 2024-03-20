@@ -7,6 +7,8 @@ public class DestroyOutOfBounds : MonoBehaviour
 
     private float topBound = 30f;
     private float lowerBound = -10f;
+    private float xBound = 20f;
+    private float xxBound = -20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,14 @@ public class DestroyOutOfBounds : MonoBehaviour
             //Destroys animals and tells the player game over
             Destroy(gameObject);
             Debug.Log("GAME OVER!");
+        }
+        else if(transform.position.x > xBound )
+        {
+            Destroy (gameObject);
+        }
+        else if ((transform.position.x < xxBound))
+        {
+            Destroy (gameObject);
         }
     }
 }

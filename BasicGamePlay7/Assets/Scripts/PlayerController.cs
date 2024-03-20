@@ -10,14 +10,17 @@ public class PlayerController : MonoBehaviour
     public float speed = 20.0f;
     private float xRange = 15.0f;
     private float zRange = 15.0f;
-    private float zzRange = 1.0f;
+    private float zzRange = 0.0f;
     private float verticalInput;
+
+    public float livesNumber = 3.0f;
+    private float livesSubtract = 1f;
 
     public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Lives: 3");
     }
 
     // Update is called once per frame
@@ -51,6 +54,19 @@ public class PlayerController : MonoBehaviour
         {
             //Launch steak at the animals when the player presses space
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
+
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        livesNumber = 3 - livesSubtract;
+        Debug.Log("Lives: " + livesNumber);
+        livesSubtract++;
+        if(livesNumber <= 0)
+        {
+            Debug.Log("game over");
+            livesNumber = 0f;
         }
     }
 }
