@@ -14,13 +14,14 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
 
     public float livesNumber = 3.0f;
-    private float livesSubtract = 1f;
+    public float livesSubtract = 1f;
 
     public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Lives: 3");
+        Debug.Log("Score: 0");
     }
 
     // Update is called once per frame
@@ -58,15 +59,6 @@ public class PlayerController : MonoBehaviour
 
         
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        livesNumber = 3 - livesSubtract;
-        Debug.Log("Lives: " + livesNumber);
-        livesSubtract++;
-        if(livesNumber <= 0)
-        {
-            Debug.Log("game over");
-            livesNumber = 0f;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
 }
+    

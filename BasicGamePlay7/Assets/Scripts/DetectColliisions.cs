@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DetectColliisions : MonoBehaviour
 {
+
+
+    private CheatCode gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("CheatCode").GetComponent<CheatCode>();
     }
 
     // Update is called once per frame
@@ -18,6 +21,16 @@ public class DetectColliisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            gameManager.AddLive(-1);
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("Animal"))
+        {
+            gameManager.AddScore(1);
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }
